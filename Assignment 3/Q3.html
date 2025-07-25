@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<style>
+    .flight-schedule {
+      font-family: Arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    .flight-schedule th, .flight-schedule td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+    .flight-schedule th {
+      background-color: #f2f2f2;
+    }
+    .international {
+      background-color: lightblue;
+    }
+  </style>
+  
+  <table class="flight-schedule">
+    <thead>
+      <tr>
+        <th>Flight Number</th>
+        <th>Destination</th>
+        <th>Departure Time</th>
+        <th>Arrival Time</th>
+        <th>Duration</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>AA101</td>
+        <td>New York (JFK)</td>
+        <td>07:00</td>
+        <td>10:30</td>
+        <td><abbr title="3 hours 30 minutes">3h 30m</abbr></td>
+        <td>On Time</td>
+      </tr>
+      <tr class="international">
+        <td>AA202</td>
+        <td>London (LHR)</td>
+        <td>13:15</td>
+        <td>06:45 (+1)</td>
+        <td><abbr title="7 hours 30 minutes">7h 30m</abbr></td>
+        <td>On Time</td>
+      </tr>
+      <tr>
+        <td>AA303</td>
+        <td>Chicago (ORD)</td>
+        <td>09:45</td>
+        <td>11:55</td>
+        <td><abbr title="2 hours 10 minutes">2h 10m</abbr></td>
+        <td>Delayed</td>
+      </tr>
+      <tr class="international">
+        <td>AA404</td>
+        <td>Dubai (DXB)</td>
+        <td>22:00</td>
+        <td>19:30 (+1)</td>
+        <td><abbr title="13 hours 30 minutes">13h 30m</abbr></td>
+        <td>Cancelled</td>
+      </tr>
+      <tr>
+        <td>AA505</td>
+        <td>Los Angeles (LAX)</td>
+        <td>14:20</td>
+        <td>17:45</td>
+        <td><abbr title="3 hours 25 minutes">3h 25m</abbr></td>
+        <td>On Time</td>
+      </tr>
+    </tbody>
+  </table>
+  

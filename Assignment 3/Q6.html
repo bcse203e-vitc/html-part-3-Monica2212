@@ -1,0 +1,31 @@
+<form id="feedback">
+    <input type="text" name="name" placeholder="Name" required>
+    <input type="email" name="email" placeholder="Email" required>
+  
+    <div>
+      Rate:
+      <label><input type="radio" name="rating" value="1">★</label>
+      <label><input type="radio" name="rating" value="2">★</label>
+      <label><input type="radio" name="rating" value="3">★</label>
+      <label><input type="radio" name="rating" value="4">★</label>
+      <label><input type="radio" name="rating" value="5" checked>★</label>
+    </div>
+  
+    <select name="type" required>
+      <option value="">Type of Feedback…</option>
+      <option>Suggestion</option>
+      <option>Bug Report</option>
+      <option>Compliment</option>
+    </select>
+  
+    <textarea name="feedback" rows="4" placeholder="Your feedback" required></textarea>
+  
+    <div>
+      Recommend us?
+      <label><input type="radio" name="recommend" value="yes" checked>Yes</label>
+      <label><input type="radio" name="recommend" value="no">No</label>
+    </div>
+  
+    <button type="submit">Submit</button>
+    <button type="reset">Reset</button>
+  </form>

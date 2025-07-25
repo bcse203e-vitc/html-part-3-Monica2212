@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Online Garba Registration</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .form-group {
+      margin-bottom: 1rem;
+    }
+    .form-label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+    }
+    .form-input,
+    .form-select,
+    .form-textarea {
+      width: 100%;
+      padding: 0.5rem;
+      box-sizing: border-box;
+      font-size: 1rem;
+    }
+    .form-radio,
+    .form-checkbox {
+      margin-right: 0.5rem;
+    }
+    .btn {
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      color: #fff;
+      background-color: #007bff;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    .btn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Register for Our Online Event</h1>
+
+  <form action="#" method="post" class="registration-form">
+    
+    <!-- Full Name -->
+    <div class="form-group">
+      <label for="fullName" class="form-label">Full Name</label>
+      <input type="text" id="fullName" name="fullName" class="form-input" required>
+    </div>
+
+    <!-- Email with HTML5 validation -->
+    <div class="form-group">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" id="email" name="email" class="form-input" required
+             placeholder="you@example.com">
+    </div>
+
+    <!-- Phone Number -->
+    <div class="form-group">
+      <label for="phone" class="form-label">Phone Number</label>
+      <input type="text" id="phone" name="phone" class="form-input"
+             placeholder="(123) 456-7890">
+    </div>
+
+    <!-- Gender -->
+    <fieldset class="form-group">
+      <legend class="form-label">Gender</legend>
+      <label>
+        <input type="radio" name="gender" value="male" class="form-radio" required>
+        Male
+      </label>
+      <label>
+        <input type="radio" name="gender" value="female" class="form-radio">
+        Female
+      </label>
+      <label>
+        <input type="radio" name="gender" value="other" class="form-radio">
+        Other
+      </label>
+    </fieldset>
+
+    <!-- Age Group -->
+    <div class="form-group">
+      <label for="ageGroup" class="form-label">Age Group</label>
+      <select id="ageGroup" name="ageGroup" class="form-select" required>
+        <option value="">-- Select your age group --</option>
+        <option value="under18">Under 18</option>
+        <option value="18-24">18–24</option>
+        <option value="25-34">25–34</option>
+        <option value="35-44">35–44</option>
+        <option value="45-54">45–54</option>
+        <option value="55plus">55+</option>
+      </select>
+    </div>
+
+    <!-- Topics of Interest -->
+    <fieldset class="form-group">
+      <legend class="form-label">Topics of Interest</legend>
+      <label>
+        <input type="checkbox" name="topics" value="technology" class="form-checkbox">
+        Technology
+      </label>
+      <label>
+        <input type="checkbox" name="topics" value="health" class="form-checkbox">
+        Health
+      </label>
+      <label>
+        <input type="checkbox" name="topics" value="education" class="form-checkbox">
+        Education
+      </label>
+      <label>
+        <input type="checkbox" name="topics" value="finance" class="form-checkbox">
+        Finance
+      </label>
+      <label>
+        <input type="checkbox" name="topics" value="entertainment" class="form-checkbox">
+        Entertainment
+      </label>
+    </fieldset>
+
+    <!-- Additional Comments -->
+    <div class="form-group">
+      <label for="comments" class="form-label">Additional Comments</label>
+      <textarea id="comments" name="comments" class="form-textarea" rows="4"
+                placeholder="Let us know if you have any questions or special needs…"></textarea>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="form-group">
+      <button type="submit" class="btn">Register</button>
+    </div>
+
+  </form>
+
+</body>
+</html>

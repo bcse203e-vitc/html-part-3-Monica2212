@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Login & Reset</title>
+<style>
+body{font:16px/1.5 sans-serif;max-width:400px;margin:2rem auto;padding:1rem;border:1px solid #ccc;border-radius:8px}
+h1,h2{text-align:center}
+label{display:block;margin:.5rem 0 .2rem}
+input,button,meter{width:100%;padding:.5rem;box-sizing:border-box}
+button{margin:1rem 0;background:#007BFF;color:#fff;border:none;border-radius:4px;cursor:pointer}
+button:hover{background:#0056b3}
+.link{text-align:right;margin:.2rem 0}
+meter{height:.5rem}
+</style>
+</head>
+<body>
+<h1>Login</h1>
+<form action="/login" method="post">
+  <label>Username:<input name="username" required></label>
+  <label>Password:<input type="password" name="password" required></label>
+  <div class="link"><a href="#reset">Forgot?</a></div>
+  <button type="submit">Login</button>
+</form>
+<hr>
+<h2 id="reset">Reset</h2>
+<form action="/reset-password" method="post" novalidate>
+  <label>Email:<input type="email" name="email" placeholder="you@example.com" required></label>
+  <label>New Password:<input id="pw" type="password" required></label>
+  <meter id="m" max="5" value="0"></meter>
+  <div id="t" style="text-align:right;font-weight:bold"></div>
+  <label>Confirm:<input type="password" name="confirm" required></label>
+  <button type="submit">Reset</button>
+</form>
+<script>
+function strength(p){
+  let s=0;
+  s+=p.length>7;
+  /[a-z]/.test(p)&&s++;
+  /[A-Z]/.test(p)&&s++;
+  /[0-9]/.test(p)&&s++;
+  /[^A-Za-z0-9]/.test(p)&&s++;
+  return s;
+}
+const m=document.getElementById("m"),
+      t=document.getElementById("t"),
+      pw=document.getElementById("pw");
+pw.oninput=()=>{
+  let s=strength(pw.value),
+      txt=s<3?"Weak":s<5?"Medium":"Strong",
+      col=s<3?"red":s<5?"orange":"green";
+  m.value=s;
+  t.textContent=txt;
+  t.style.color=col;
+};
+</script>
+</body>
+</html>

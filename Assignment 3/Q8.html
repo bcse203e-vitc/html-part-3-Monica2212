@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Travel Booking</title>
+  <style>
+    body { font-family:sans-serif; padding:1rem; }
+    form { max-width:400px; margin:auto; }
+    .field { margin-bottom:.75rem; }
+    label { display:block; margin-bottom:.25rem; }
+    input, select { width:100%; padding:.5rem; }
+    .inline { display:flex; gap:.5rem; }
+    .inline label { flex:1; }
+  </style>
+</head>
+<body>
+  <form id="f">
+    <div class="field">
+      <label>Full Name<input type="text" name="name" required></label>
+    </div>
+    <div class="inline">
+      <label>Email<input type="email" name="email" required></label>
+      <label>Phone<input type="tel" name="phone" required></label>
+    </div>
+    <div class="field">
+      <label>Destination
+        <select name="dest" required>
+          <option value="">–Select–</option>
+          <option>Paris</option>
+          <option>New York</option>
+          <option>Tokyo</option>
+          <option>Sydney</option>
+        </select>
+      </label>
+    </div>
+    <div class="inline">
+      <label>Start Date<input type="date" name="start" required></label>
+      <label>End Date<input type="date" name="end" required></label>
+    </div>
+    <div class="field">
+      <label># Travelers<input type="number" name="n" min="1" value="1" required></label>
+    </div>
+    <fieldset class="field">
+      <legend>Class</legend>
+      <div class="inline">
+        <label><input type="radio" name="cls" value="eco" checked>Economy</label>
+        <label><input type="radio" name="cls" value="bus">Business</label>
+        <label><input type="radio" name="cls" value="fst">First</label>
+      </div>
+    </fieldset>
+    <div class="field">
+      <label><input type="checkbox" name="ins">Insurance (+\$100/person)</label>
+    </div>
+    <div class="field">
+      <label>Total Cost<input type="text" name="total" readonly></label>
+    </div>
+    <button type="submit">Book Now</button>
+  </form>
+
+  <script>
+    const price = { eco:1000, bus:2000, fst:3000, ins:100 };
+    const f = document.forms[0];
+    function calc() {
+      const n = +f.n.value;
+      const cls = f.cls.value;
+      let t = price[cls]*n + (f.ins.checked ? price.ins* n : 0);
+      f.total.value = `$${t.toLocaleString()}`;
+    }
+    f.addEventListener('input', calc);
+    window.addEventListener('DOMContentLoaded', calc);
+    f.addEventListener('submit', e=>{
+      e.preventDefault(); alert('Total: '+f.total.value);
+    });
+  </script>
+</body>
+</html>

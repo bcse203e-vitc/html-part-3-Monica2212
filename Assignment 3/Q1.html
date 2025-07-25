@@ -1,1 +1,98 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>E-Commerce Product Table</title>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1em;
+    }
+    caption {
+      font-size: 1.2em;
+      margin-bottom: 0.5em;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px 12px;
+      text-align: center;
+    }
+    thead {
+      background-color: #333;
+      color: #fff;
+    }
+    /* Category row colors */
+    .electronics   { background-color: #f2f2f2; }
+    .clothing      { background-color: #dff0d8; }
+    .home-kitchen  { background-color: #fcf8e3; }
+    .sports        { background-color: #d9edf7; }
+    .books         { background-color: #f9e2fc; }
+  </style>
+</head>
+<body>
+  <h1>E-Commerce Product List</h1>
+  <table>
+    <caption><strong>Product Details</strong></caption>
+    <thead>
+      <tr>
+        <th>Product ID</th>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Price ($)</th>
+        <th>Discount (%)</th>
+        <th>Final Price ($)</th>
+        <th>Rating</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="electronics">
+        <td>101</td>
+        <td>Wireless Mouse</td>
+        <td>Electronics</td>
+        <td>25.00</td>
+        <td>10</td>
+        <td>22.50</td>   <!-- 25.00 - (25.00 × 0.10) -->
+        <td>★★★★☆</td>
+      </tr>
+      <tr class="clothing">
+        <td>202</td>
+        <td>Cotton T-Shirt</td>
+        <td>Clothing</td>
+        <td>18.00</td>
+        <td>15</td>
+        <td>15.30</td>   <!-- 18.00 - (18.00 × 0.15) -->
+        <td>★★★☆☆</td>
+      </tr>
+      <tr class="home-kitchen">
+        <td>303</td>
+        <td>Blender Pro</td>
+        <td>Home &amp; Kitchen</td>
+        <td>65.00</td>
+        <td>20</td>
+        <td>52.00</td>   <!-- 65.00 - (65.00 × 0.20) -->
+        <td>★★★★★</td>
+      </tr>
+      <tr class="sports">
+        <td>404</td>
+        <td>Running Shoes</td>
+        <td>Sports</td>
+        <td>80.00</td>
+        <td>25</td>
+        <td>60.00</td>   <!-- 80.00 - (80.00 × 0.25) -->
+        <td>★★★★☆</td>
+      </tr>
+      <tr class="books">
+        <td>505</td>
+        <td>Modern Fiction Novel</td>
+        <td>Books</td>
+        <td>12.00</td>
+        <td>5</td>
+        <td>11.40</td>   <!-- 12.00 - (12.00 × 0.05) -->
+        <td>★★★☆☆</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
